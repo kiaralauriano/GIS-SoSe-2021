@@ -1,0 +1,26 @@
+
+/* ---------------------------------
+Navigationsleiste
+--------------------------------- */
+.navbar-default{
+	background-color: white;
+	border-color: white;
+
+
+}
+
+.social{
+	width: 5%;
+
+}
+
+.left-float{
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	width: 15%;
+}
+
+a {
+	background-color: white;
+}

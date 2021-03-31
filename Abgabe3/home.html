@@ -8,20 +8,51 @@
         <meta name="description" content="Abgabe3" />
 		<meta name="keywords" content="lernen, basic, abgabe3, html" />
         <link rel="stylesheet" href="style.css" />
-		
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="vendor/bootstrap-3.3.7/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="style.css" />
     </head>
 
     <body>
         <header>
         </header>
 
-        <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="thatsme.html" >Thats Me</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <nav class="navbar navbar-default">
+            <div class="container">
+
+              <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <img src="images/Logo.png" alt="Logo" id="logo">
+              </div>
+
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="home.html">Home</a></li>
+                        <li><a href="uebermich.html">That's Me</a></li>
+                      <li><a href="blog.html">Blog</a></li>
+                      <li><a href="projekte.html">Project</a></li>
+                      <li><a href="kontakt.html">Contact</a></li>
+                      <li class="dropdown">
+                        <a href="social.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Social<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                              <li><a href="http://instagram.com/kiaralauriano"><img src="images/Instagram.png" alt="InstagramLogo" class="left-float">Instagram</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="http://twitter.com/kiaralauriano"><img src="images/Twitter.png" alt="TwitterLogo" class="left-float">Twitter</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#"><img src="images/Facebook.png" alt="FacebookLogo" class="left-float">Facebook</a></li>
+                            </ul>
+                              </li>
+                    </ul>
+              </div>
+      
+            </div>
+  </nav>
 
 
         <main>
