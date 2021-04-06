@@ -42,6 +42,24 @@ navigation
 }
 
 /* ---------------------------------
+contact
+--------------------------------- */
+form{
+	margin: 1em 0 1em 0;
+	position: relative;
+}
+
+form label{
+	position: absolute;
+	top: .5em;
+	left: .5em;
+	color: #666;
+}
+
+form input{
+	padding: .5em;
+}
+/* ---------------------------------
 Footer
 --------------------------------- */
 footer {
