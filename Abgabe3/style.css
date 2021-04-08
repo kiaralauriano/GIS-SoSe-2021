@@ -4,42 +4,77 @@ Hintergrund
 
 
 body{
-	background-image: 
-	repeating-linear-gradient(45deg, white 0%, white 0.125%, beige 0.125%,beige 0.25%, white 0.25%);
+	background-image: url(images/hintergrund.png);
 	font-family: sans-serif;
+	width: 800px;
+	
 }
 
 
 /* ---------------------------------
 navigation
 --------------------------------- */
-
-#navbar{
+.navbar{
+	height: 50px;
 	overflow: hidden;
-	background-color: black;
-	position: fixed;
+	position: sticky;
 	top: 0;
-	width: 50%;
-	
 	
 }
 
 
+nav ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	
+}
+nav{
+	float: right;
+	margin: 0;
+	background-color:black ;
+	border-radius: 20px;
+	position: relative;
+	
+	
 
-.navcolor{
-	float: left;
-	display: block;
+}
+
+nav li{
+	display: inline;
+	padding: 15px;
+	
+}
+
+
+nav a{
+	
+	display: inline-block;
 	color: white;
 	text-align: center;
 	font-family: Arial, Helvetica, sans-serif;
 	padding: 14px 16px;
 	text-decoration: none;
+	
+	
 }
 
-#navbar .navcolor:hover{
+nav a:hover{
 	background: #ddd;
 	color: black;
+	border-radius: 20px;
 }
+
+
+
+#home #nav1,
+#thatsme #nav2,
+#contact #nav3{
+	color: antiquewhite;
+	background-color:rosybrown ;
+	border-radius: 20px;
+}
+
 
 /* ---------------------------------
 contact
@@ -47,17 +82,22 @@ contact
 form{
 	margin: 1em 0 1em 0;
 	position: relative;
+	
 }
 
-form label{
-	position: absolute;
-	top: .5em;
-	left: .5em;
-	color: #666;
-}
+
 
 form input{
 	padding: .5em;
+	background: #666;
+	
+}
+
+form textarea{
+	padding: .5em;
+	font-family: sans-serif;
+	background: #666;
+	
 }
 /* ---------------------------------
 Footer
