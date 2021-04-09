@@ -10,7 +10,10 @@ body{
 	
 }
 
-
+h1{
+  letter-spacing: 0.25em;
+  text-shadow: 0.1em 0.1em lightpink;
+}
 
 /* ---------------------------------
 navigation
