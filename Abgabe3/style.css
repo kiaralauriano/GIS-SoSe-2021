@@ -11,6 +11,7 @@ body{
 }
 
 
+
 /* ---------------------------------
 navigation
 --------------------------------- */
@@ -152,6 +153,25 @@ button{
 	font-size: 0.5em;
 }
 
+/* ---------------------------------
+Homepage
+--------------------------------- */
+.col{
+  display: table-cell;
+  box-sizing: border-box;
+  padding: 0.5em;
+  vertical-align: top;
+  
+  
+}
+
+.col img{
+  width: 250px;
+}
+
+.col video{
+  width: 784px;
+}
 /* ---------------------------------
 Footer
 --------------------------------- */
