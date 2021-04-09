@@ -14,31 +14,33 @@
         <header>
         </header>
 
-        <div class="navbar" >    
-            <nav>
+        <div class="navbar">  
+            <nav role="navigation">
                 <ul>
-                    <li><a href="home.html" id="nav1">Home</a></li>
-                    <li><a href="thatsme.html" id="nav2" >Thats Me</a></li>
-                    <li><a href="contact.html" id="nav3">Contact</a></li>
+                  <li><a href="home.html" id="nav1">Home</a></li>
+                  <li><a href="thatsme.html" id="nav2">That's Me</a></li>
+                  <li><a href="contact.html" id="nav3">Contact</a></li>
+                  <li><a  aria-haspopup="true">Social</a>
+                    <ul class="dropdown" aria-label="submenu">
+                      <li><a href="http://instagram.com/kiaralauriano"><img src="images/Instagram.png" alt="navinsta" class="left-float">Instagram</a></li>
+                      <li><a href="http://twitter.com/kiaralauriano"><img src="images/Twitter.png" alt="navtwitter" class="left-float">Twitter</a></li>
+                    </ul>
+                  </li> 
                 </ul>
-            </nav>
-        </div>  
-
+              </nav>
+        </div>
 
         <main>
 
             <h1>Contact Me!</h1>
             <form>
-                <p><label></label>
-                <input type="text" name="firstname" placeholder="First name"></p>
-                <p><label></label>
-                <input type="text" name="lastname" placeholder="Last name"></p>
-                <p><label></label>
-                <input type="email" name="email" required placeholder="E-Mail"></p>
-                <p><label></label>
-                <textarea rows="7" name="message" required placeholder="Message"></textarea></p>
+                <p><input type="text" name="firstname" placeholder="First name"></p>
+                <p><input type="text" name="lastname" placeholder="Last name"></p>
+                <p><input type="email" name="email" required placeholder="E-Mail"></p>
+                <textarea rows="7" name="message" required placeholder="Message"></textarea>
+                <p id="textform">Mit absenden der Nachricht bestaetige ich den Datenschutz</p>
                 <button type="submit">Press send</button>
-            </form></p>
+            </form>
 
             <table>
                 <thead>
@@ -63,11 +65,11 @@
         </main>
 
         <footer>
-            <p >copyright © 2021, KiKi Lauriano | Germany / Worldwide | Legal Notifications |
+            <p> © 2021, KiKi Lauriano | Germany / Worldwide | Legal Notifications |
 
             <a href="http://twitter.com/kiaralauriano"><img src="images/twitter-footer.png" alt="TwitterLogo" class="footerlogo"></a>
 
-            <a href="http://instagram.com/kiaralauriano"><img src="images/insta-footer.png" alt="InstagramLogo" class="footerlogo"></a>
+            <a href="http://instagram.com/kiaralauriano"><img src="images/insta-footer.png" alt="InstagramLogo" class="footerlogo"></a></p>
 
             
         </footer>

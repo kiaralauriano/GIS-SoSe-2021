@@ -1,5 +1,5 @@
 /* ---------------------------------
-Hintergrund
+Background
 --------------------------------- */
 
 
@@ -15,67 +15,100 @@ body{
 navigation
 --------------------------------- */
 .navbar{
-	height: 50px;
-	overflow: hidden;
 	position: sticky;
 	top: 0;
-	
+	height: 50px;
 }
 
 
-nav ul{
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	
-}
-nav{
-	float: right;
+  
+  nav {
+    font-family: sans-serif;
+    float: right;
 	margin: 0;
 	background-color:black ;
 	border-radius: 20px;
-	position: relative;
+	position: sticky;
+    
+  }
+  
+  ul {
+    background: black;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
 	
-	
-
-}
-
-nav li{
-	display: inline;
-	padding: 15px;
-	
-}
-
-
-nav a{
-	
-	display: inline-block;
-	color: white;
-	text-align: center;
-	font-family: Arial, Helvetica, sans-serif;
-	padding: 14px 16px;
+  }
+  
+  li {
+    color: #fff;
+    background: black;
+    display: block;
+    float: left;
+    padding: 1rem;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
+  }
+    
+  li a {
+    color: #fff;
 	text-decoration: none;
+  }
+  
+  li:hover,
+  li:focus-within {
+    background: lightgrey;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  
+  li:focus-within a {
+    outline: none;
+  }
+  
+  ul li ul {
+    background: black;
+    visibility: hidden;
+    opacity: 0;
+    min-width: 5rem;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    left: 0;
+    display: none;
 	
-	
+  }
+  
+  ul li:hover > ul,
+  ul li:focus-within > ul,
+  ul li ul:hover,
+  ul li ul:focus {
+     visibility: visible;
+     opacity: 1;
+     display: block;
+	 border-radius: 20px;
+  }
+  
+  ul li ul li {
+    clear: both;
+    width: 100%;
+  }
+
+  #home #nav1,
+  #thatsme #nav2,
+  #contact #nav3{
+      color: antiquewhite;
+	  font-weight: 900;
+    
+  }
+  .left-float{
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	width: 11%;
 }
-
-nav a:hover{
-	background: #ddd;
-	color: black;
-	border-radius: 20px;
-}
-
-
-
-#home #nav1,
-#thatsme #nav2,
-#contact #nav3{
-	color: antiquewhite;
-	background-color:rosybrown ;
-	border-radius: 20px;
-}
-
-
+   
 /* ---------------------------------
 contact
 --------------------------------- */
@@ -89,16 +122,36 @@ form{
 
 form input{
 	padding: .5em;
-	background: #666;
-	
+	background: lightgrey;
+	border-radius: 5px;
 }
 
 form textarea{
 	padding: .5em;
 	font-family: sans-serif;
-	background: #666;
+	background: lightgrey;
+	border-radius: 5px;
 	
 }
+
+button{
+	padding: .5em;
+	font-family: sans-serif;
+	background: lightgrey;
+	border-radius: 5px;
+	color: white;
+}
+
+::placeholder{
+	color: white;
+	font-size: 1.2em;
+}
+
+#textform{
+	color: lightgrey;
+	font-size: 0.5em;
+}
+
 /* ---------------------------------
 Footer
 --------------------------------- */
@@ -108,6 +161,7 @@ footer {
 	margin-top:20px;
 	text-align: center;
 	color: white;
+	border-radius: 5px;
 }
 .footerlogo{
 	width: 4.5%;

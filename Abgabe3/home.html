@@ -6,7 +6,7 @@
         <meta charset="utf-8"/>
         <meta name="author" content="Kiara Lauriano"/>
         <meta name="description" content="Abgabe2" />
-		    <meta name="keywords" content="lernen, basic, abgabe2, html" />
+		<meta name="keywords" content="lernen, basic, abgabe2, html" />
         <link rel="stylesheet" href="style.css" />
 		
     </head>
@@ -15,17 +15,24 @@
         <header>
         </header>
 
-    <div class="navbar" >    
-        <nav class="sticky">
+    <div class="navbar">  
+        <nav role="navigation">
             <ul>
-                <li><a href="home.html" id="nav1">Home</a></li>
-                <li><a href="thatsme.html" id="nav2" >Thats Me</a></li>
-                <li><a href="contact.html" id="nav3">Contact</a></li>
+              <li><a href="home.html" id="nav1">Home</a></li>
+              <li><a href="thatsme.html" id="nav2">That's Me</a></li>
+              <li><a href="contact.html" id="nav3">Contact</a></li>
+              <li><a  aria-haspopup="true">Social</a>
+                <ul class="dropdown" aria-label="submenu">
+                  <li><a href="http://instagram.com/kiaralauriano"><img src="images/Instagram.png" alt="navinsta" class="left-float">Instagram</a></li>
+                  <li><a href="http://twitter.com/kiaralauriano"><img src="images/Twitter.png" alt="navtwitter" class="left-float">Twitter</a></li>
+                </ul>
+              </li> 
             </ul>
-        </nav>
-    </div>    
+          </nav>
+    </div>   
 
         <main>
+            
             <h1>My works</h1>
             
                
@@ -50,11 +57,11 @@
         </main>
 
         <footer>
-            <p >copyright © 2021, KiKi Lauriano | Germany / Worldwide | Legal Notifications |
+            <p> © 2021, KiKi Lauriano | Germany / Worldwide | Legal Notifications |
 
             <a href="http://twitter.com/kiaralauriano"><img src="images/twitter-footer.png" alt="TwitterLogo" class="footerlogo"></a>
 
-            <a href="http://instagram.com/kiaralauriano"><img src="images/insta-footer.png" alt="InstagramLogo" class="footerlogo"></a>
+            <a href="http://instagram.com/kiaralauriano"><img src="images/insta-footer.png" alt="InstagramLogo" class="footerlogo"></a></p>
 
             
         </footer>
