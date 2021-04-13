@@ -64,11 +64,12 @@ navigation
 	text-decoration: none;
   }
   
-  li:hover,
-  li:focus-within {
+  a:hover,
+  a:focus-within {
     background: lightgrey;
     cursor: pointer;
-    border-radius: 20px;
+    padding: 10px;
+    border-radius: 15px;
   }
   
   li:focus-within a {
