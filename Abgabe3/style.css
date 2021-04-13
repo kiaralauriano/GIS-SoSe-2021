@@ -91,8 +91,8 @@ navigation
   
   ul li:hover > ul,
   ul li:focus-within > ul,
-  ul li ul:hover,
-  ul li ul:focus {
+  ul a ul:hover,
+  ul a ul:focus {
      visibility: visible;
      opacity: 1;
      display: block;
