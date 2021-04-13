@@ -1,7 +1,11 @@
 /* ---------------------------------
 Background
 --------------------------------- */
-
+html{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 body{
 	background-image: url(images/hintergrund.png);
