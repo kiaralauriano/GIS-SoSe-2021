@@ -11,7 +11,8 @@ body{
 	background-image: url(images/hintergrund.png);
 	font-family: sans-serif;
 	width: 800px;
-	
+  word-wrap:break-word !important;
+	line-height: 32px;
 }
 
 h1{
@@ -19,123 +20,227 @@ h1{
   text-shadow: 0.1em 0.1em lightpink;
 }
 
+.row::after{
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+
 /* ---------------------------------
 navigation
 --------------------------------- */
-.navbar{
-	position: sticky;
-	top: 0;
-	height: 50px;
+.toggle,
+[id^=drop] {
+	display: none;
 }
 
 
-  
-  nav {
-    font-family: sans-serif;
-    float: right;
-	margin: 0;
-	background-color:black ;
-	border-radius: 20px;
-	position: sticky;
-    
-  }
-  
-  ul {
-    background: black;
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-	
-  }
-  
-  li {
-    color: #fff;
-    background: black;
-    display: block;
-    float: left;
-    padding: 1rem;
-    position: relative;
-    text-decoration: none;
-    transition-duration: 0.5s;
-  }
-    
-  li a {
-  color: #fff;
-	text-decoration: none;
-  }
-  
-  li a:hover,
-  li a:focus-within {
-    background: lightgrey;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 10px;
-  }
-  
-  a:focus-within{
-    outline: none;
-  }
-  
-  ul li ul {
-    background: black;
-    visibility: hidden;
-    opacity: 0;
-    min-width: 5rem;
-    position: absolute;
-    transition: all 0.5s ease;
-    margin-top: 1rem;
-    left: 0;
-    display: none;
-	
-  }
-  
-  ul li:hover > ul,
-  ul li:focus-within > ul,
-  ul a ul:hover,
-  ul a ul:focus {
-    visibility: visible;
-    opacity: 1;
-    display: block;
-	  border-radius: 15px;
-  }
-  
-  ul li ul li {
-    clear: both;
-    width: 100%;
-  }
+nav:after {
+	content:"";
+	display:table;
+	clear:both;
+}
 
-  #home #nav1,
-  #thatsme #nav2,
-  #contact #nav3{
-      color: antiquewhite;
-	  font-weight: 900;
-    
-  }
-  .left-float{
+nav ul {
+	float: right;
+	padding:0;
+	margin:0;
+	list-style: none;
+	position: relative;
+	}
+
+nav ul li {
+	margin: 0px;
+	float: left;
+	background-color:black;
+	}
+
+
+nav a {
+	display:block;
+	padding:14px 20px;	
+	color:#FFF;
+	font-size:17px;
+	text-decoration:none;
+}
+
+
+nav ul li ul li:hover { background: #000000; }
+
+
+nav a:hover { 
+	background-color:lightgray; 
+}
+
+
+nav ul ul {
+	display: none;
+	position: absolute; 
+	top: 60px; 
+}
+	
+
+nav ul li:hover > ul {
+	display:inherit;
+}
+	
+
+nav ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+
+
+nav ul ul ul li {
+	position: relative;
+	top:-60px; 
+	left:170px; 
+}
+
+li > a:after { content:  ' +'; }
+li > a:only-child:after { content: ''; }
+
+.left-float{
 	float: left;
 	margin-right: 20px;
 	margin-bottom: 10px;
-	width: 11%;
+	width: 5%;
 }
+
+#home #nav1,
+#thatsme #nav2,
+#contact #nav3{
+    color: antiquewhite;
+	  font-weight: 900;
+    
+  }
+
+/* ---------------------------------
+responsive design - navbar
+--------------------------------- */
+@media all and (max-width : 768px) {
+
+	#logo {
+		display: block;
+		padding: 0;
+		width: 100%;
+		text-align: center;
+		float: none;
+	}
+
+	nav {
+		margin: 0;
+        font-family: sans-serif;
+        
+	}
+
+	.toggle + a,
+	.menu {
+		display: none;
+	}
+
+	.toggle {
+		display: block;
+		background-color: black;
+		padding:14px 20px;	
+		color:#FFF;
+		font-size:17px;
+		text-decoration:none;
+		border:none;
+	}
+
+	.toggle:hover {
+		background-color: lightgray;
+	}
+
+
+	[id^=drop]:checked + ul {
+		display: block;
+	}
+
+	
+	nav ul li {
+		display: block;
+		width: 100%;
+		}
+
+	nav ul ul .toggle,
+	nav ul ul a {
+		padding: 0 40px;
+	}
+
+	nav ul ul ul a {
+		padding: 0 80px;
+	}
+
+	nav a:hover,
+ 	nav ul ul ul a {
+		background-color: lightgray;
+	}
+  
+	nav ul li ul li .toggle,
+	nav ul ul a,
+  nav ul ul ul a{
+		padding:14px 20px;	
+		color:white;
+		font-size:17px; 
+	}
+  
+  
+	nav ul li ul li .toggle,
+	nav ul ul a {
+		background-color: #212121; 
+	}
+
+	
+	nav ul ul {
+		float: none;
+		position:static;
+		color: white;
+	}
+	
+	nav ul ul li:hover > ul,
+	nav ul li:hover > ul {
+		display: none;
+	}
+		
+	
+	nav ul ul li {
+		display: block;
+		width: 100%;
+	}
+
+	nav ul ul ul li {
+		position: static;
+	}
+
+}
+
+@media all and (max-width : 330px) {
+
+	nav ul li {
+		display:block;
+		width: 94%;
+	}
+
+}
+
+ 
    
 /* ---------------------------------
 Homepage
 --------------------------------- */
-.col{
-  display: table-cell;
-  box-sizing: border-box;
-  padding: 0.5em;
-  vertical-align: top;
-  
-  
-}
-
-.col img{
-  width: 250px;
-}
-
-.col video{
-  width: 784px;
+.homepic:hover{
+  transform: scale(1.25);
+  opacity: 1;
 }
 
 /* ---------------------------------
@@ -181,10 +286,33 @@ button{
 	font-size: 0.5em;
 }
 
+/* ---------------------------------
+contact - animation
+--------------------------------- */
+.animated-text{
+  animation-name: color;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  text-align: center;
+}
+
+@keyframes color{
+  0% {
+    color: lightpink;
+  }
+  50% {
+    color: violet;
+  }
+  100% {
+    color: darkorchid;
+  }
+}
 
 /* ---------------------------------
 Footer
 --------------------------------- */
+
+
 footer {
 	background: black;
 	padding: 10px;
@@ -197,3 +325,65 @@ footer {
 	width: 4.5%;
 	background-color: black;
 }
+
+
+
+/* ---------------------------------
+responsive design
+--------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+/* for mobile phones: */
+[class*="col-"]{
+  width: 100%;
+}
+
+@media only screen and (min-width:600px) {
+  /* for tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+
+@media only screen and (min-width: 768px) {
+  /* for desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+video{
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------------------------------
+imports
+--------------------------------- */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif);

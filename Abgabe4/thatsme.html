@@ -6,6 +6,7 @@
         <meta name="author" content="Kiara Lauriano"/>
         <meta name="description" content="Abgabe3" />
 		    <meta name="keywords" content="lernen, basic, abgabe3, html, css" />
+        <meta name="viewport" content="widht=device-width, initial-scale=1.0">
 		    <link rel="stylesheet" href="style.css" />
     </head>
 
@@ -13,58 +14,67 @@
         <header>
         </header>
 
-        <div class="navbar">  
-          <nav>
-              <ul>
-                <li><a href="home.html" id="nav1">Home</a></li>
-                <li><a href="thatsme.html" id="nav2">That's Me</a></li>
-                <li><a href="contact.html" id="nav3">Contact</a></li>
-                <li><a  aria-haspopup="true">Social</a>
-                  <ul class="dropdown">
-                    <li><a href="http://instagram.com/kiaralauriano"><img src="images/Instagram.png" alt="navinsta" class="left-float">Instagram</a></li>
-                    <li><a href="http://twitter.com/kiaralauriano"><img src="images/Twitter.png" alt="navtwitter" class="left-float">Twitter</a></li>
+    <div class="row">
+            <nav>
+              <label for="drop" class="toggle">Menu</label>
+              <input type="checkbox" id="drop" />
+                  <ul class="menu">
+                      <li><a href="home.html" id="nav1">Home</a></li>
+                      <li><a href="thatsme.html" id="nav2">That's Me</a></li>
+                      <li>
+                          <label for="drop-1" class="toggle">Social</label>
+                          <a href="#">Social</a>
+                          <input type="checkbox" id="drop-1"/>
+                          <ul>
+                              <li><a href="http://instagram.com/kiaralauriano"><img src="images/Instagram.png" alt="navtwitter" class="left-float">Instagram</a></li>
+                              <li><a href="http://twitter.com/kiaralauriano"><img src="images/Twitter.png" alt="navtwitter" class="left-float">Twitter</a></li>
+                          </ul> 
+                      </li>
+                      <li><a href="contact.html" id="nav3">Contact</a></li>
                   </ul>
-                </li> 
-              </ul>
-            </nav>
-      </div> 
+              </nav>
+        
 
 
 
         
-        <main>
-            <h1>That's Me</h1>
-          <div class="container">    
-            <div class="col"><img src="images/kiara.jpg" alt="Kiara"></div>
-          </div>  
+          <main>
+            <div class="col-9 col-s-6">
+              <h1>That's Me</h1>
+            </div> 
+            <div class="col-9 col-s-6">
+              <img src="images/kiara.jpg" alt="Kiara">
+            </div>  
 
-
-            <h3>Description</h3>
-            <p>Hey, my name is Kiara and I study in the Furtwangen University.</p>
-            <p>I like social media and my favorite app is instagram.
-                My instagram: <a href="https://www.instagram.com/kiaralauriano">kiaralauriano</a>
-            </p>
-
-            <h4>Furtwangen University</h4>
-            <p>I study OMB thats mean "Online Media Bachelor". </p>
-             <p>I like the mix from creative, marketing and computer science.</p>
+            <div class="col-9 col-s-6">
+              <h3>Description</h3>
+              <p>Hey, my name is Kiara and I study in the Furtwangen University.</p>
+              <p>I like social media and my favorite app is instagram.
+                  My instagram: <a href="https://www.instagram.com/kiaralauriano">kiaralauriano</a>
+              </p>
+            </div> 
+            <div class="col-9 col-s-6">
+              <h4>Furtwangen University</h4>
+              <p>I study OMB thats mean "Online Media Bachelor". </p>
+              <p>I like the mix from creative, marketing and computer science.</p>
             
-            <h4>Hobbies</h4> 
-            <p>I'm in two choirs: acapella and gospel.</p> 
-            Here you can hear a small experpt from my voice: 
-                <audio src="audios/Stimme.mp3" controls autoplay></audio>
-            <p>My other hobby is the photography. You can see my works at the <a href="home.html">homepage.</a></p>
-        </main>
-
-        <footer>
-            <p> © 2021, KiKi Lauriano | Germany / Worldwide | Legal Notifications |
-
-            <a href="http://twitter.com/kiaralauriano"><img src="images/twitter-footer.png" alt="TwitterLogo" class="footerlogo"></a>
-
-            <a href="http://instagram.com/kiaralauriano"><img src="images/insta-footer.png" alt="InstagramLogo" class="footerlogo"></a></p>
-
+              <h4>Hobbies</h4> 
+              <p>I'm in two choirs: acapella and gospel.</p> 
+              Here you can hear a small experpt from my voice: 
+                  <audio src="audios/Stimme.mp3" controls autoplay></audio>
+              <p>My other hobby is the photography. You can see my works at the <a href="home.html">homepage.</a></p>
+            </div>
             
-        </footer>
+    </div>      
+            </main>
+        
+          <footer>
+              <p> © 2021, KiKi Lauriano | Germany / Worldwide | Legal Notifications |
+
+              <a href="http://twitter.com/kiaralauriano"><img src="images/twitter-footer.png" alt="TwitterLogo" class="footerlogo"></a>
+
+              <a href="http://instagram.com/kiaralauriano"><img src="images/insta-footer.png" alt="InstagramLogo" class="footerlogo"></a></p>  
+          </footer>
     </body>
 
 </html>
