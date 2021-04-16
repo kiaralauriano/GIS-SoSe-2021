@@ -238,6 +238,10 @@ responsive design - navbar
 /* ---------------------------------
 Homepage
 --------------------------------- */
+.homepic{
+  opacity: 0.5;
+  transform: scale(1);
+}
 .homepic:hover{
   transform: scale(1.25);
   opacity: 1;
