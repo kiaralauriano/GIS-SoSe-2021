@@ -1,0 +1,199 @@
+/* ---------------------------------
+Background
+--------------------------------- */
+html{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body{
+	background-image: url(images/hintergrund.png);
+	font-family: sans-serif;
+	width: 800px;
+	
+}
+
+h1{
+  letter-spacing: 0.25em;
+  text-shadow: 0.1em 0.1em lightpink;
+}
+
+/* ---------------------------------
+navigation
+--------------------------------- */
+.navbar{
+	position: sticky;
+	top: 0;
+	height: 50px;
+}
+
+
+  
+  nav {
+    font-family: sans-serif;
+    float: right;
+	margin: 0;
+	background-color:black ;
+	border-radius: 20px;
+	position: sticky;
+    
+  }
+  
+  ul {
+    background: black;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+	
+  }
+  
+  li {
+    color: #fff;
+    background: black;
+    display: block;
+    float: left;
+    padding: 1rem;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
+  }
+    
+  li a {
+  color: #fff;
+	text-decoration: none;
+  }
+  
+  li a:hover,
+  li a:focus-within {
+    background: lightgrey;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  a:focus-within{
+    outline: none;
+  }
+  
+  ul li ul {
+    background: black;
+    visibility: hidden;
+    opacity: 0;
+    min-width: 5rem;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    left: 0;
+    display: none;
+	
+  }
+  
+  ul li:hover > ul,
+  ul li:focus-within > ul,
+  ul a ul:hover,
+  ul a ul:focus {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+	  border-radius: 15px;
+  }
+  
+  ul li ul li {
+    clear: both;
+    width: 100%;
+  }
+
+  #home #nav1,
+  #thatsme #nav2,
+  #contact #nav3{
+      color: antiquewhite;
+	  font-weight: 900;
+    
+  }
+  .left-float{
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	width: 11%;
+}
+   
+/* ---------------------------------
+Homepage
+--------------------------------- */
+.col{
+  display: table-cell;
+  box-sizing: border-box;
+  padding: 0.5em;
+  vertical-align: top;
+  
+  
+}
+
+.col img{
+  width: 250px;
+}
+
+.col video{
+  width: 784px;
+}
+
+/* ---------------------------------
+contact
+--------------------------------- */
+form{
+	margin: 1em 0 1em 0;
+	position: relative;
+	
+}
+
+
+
+form input{
+	padding: .5em;
+	background: lightgrey;
+	border-radius: 5px;
+}
+
+form textarea{
+	padding: .5em;
+	font-family: sans-serif;
+	background: lightgrey;
+	border-radius: 5px;
+	
+}
+
+button{
+	padding: .5em;
+	font-family: sans-serif;
+	background: lightgrey;
+	border-radius: 5px;
+	color: white;
+}
+
+::placeholder{
+	color: white;
+	font-size: 1.2em;
+}
+
+#textform{
+	color: lightgrey;
+	font-size: 0.5em;
+}
+
+
+/* ---------------------------------
+Footer
+--------------------------------- */
+footer {
+	background: black;
+	padding: 10px;
+	margin-top:20px;
+	text-align: center;
+	color: white;
+	border-radius: 5px;
+}
+.footerlogo{
+	width: 4.5%;
+	background-color: black;
+}
