@@ -48,7 +48,7 @@ b)
 --------------------------------- */
 /* ---------------------------------
 3 
-a) A1 let als Variable "y" setzen und nicht "x" log ändern, findet die Console nicht "x".
+a) A1: let als Variable "y" setzen und nicht "x" log ändern, findet die Console nicht "x".
 Und das Terminal sagt dass "y" deklariert ist, aber nirgendwo gefunden wird. 
 --------------------------------- */
 
@@ -116,7 +116,8 @@ console.log(n);*/
 /* ---------------------------------
 5 c)
 --------------------------------- */
-/*function f (): void{
+/*
+function f (): void{
 
     let x: number = 1;
 
@@ -148,11 +149,85 @@ for (let i: number = 0; i < 10; i++) {
 /* ---------------------------------
 5 e)
 --------------------------------- */
-console.log(factorial(5));
-function factorial(n: number): number{
+/*console.log(factrorial(7));
+function factrorial(n: number): number {
     let fuc: number = 1;
     for (let i: number = 1; i <= n; i++) {
         fuc = fuc * i;
     }
     return fuc;
+}
+*/
+/* ---------------------------------
+5 f)
+--------------------------------- */
+/*
+leapyears();
+function leapyears(): void {
+    let date: Date = new Date();
+    let current: number = date.getFullYear();
+    for (let i: number = 1900; i <= current; i++) {
+        if ((i % 4) == 0 && (i % 100) != 0) {
+            console.log(i);
+        } else if ((i % 400) == 0) {
+            console.log(i);
+        }
+    }
+}
+*/
+
+/* ---------------------------------
+6 a)
+--------------------------------- */
+/*
+for (let zeile: number = 1; zeile <= 7; zeile++) {
+    let hashtagZeile: string = "";
+    while (hashtagZeile.length < zeile) {
+        hashtagZeile = hashtagZeile + "#";
+    }
+    console.log(hashtagZeile);
+}*/
+
+/* ---------------------------------
+6 b)
+--------------------------------- */
+/* 
+for (let i: number = 1; i <= 100; i++) {
+    if ((i % 3) == 0) {
+        console.log("Fizz");
+    }
+    if ((i % 5) == 0 && !((i % 3) == 0)) {
+        console.log("Buzz");
+    } else {
+        console.log(i);
+    }
+}
+*/
+/* ---------------------------------
+6 c)
+--------------------------------- */
+/* 
+for (let i: number = 1; i <= 100; i++) {
+    if ((i % 3) == 0) {
+        console.log("Fizz");
+    }
+    if ((i % 5) == 0 && !((i % 3) == 0)) {
+        console.log("Buzz");
+    } else if ((i % 15) == 0) {
+        console.log("FizzBuzz");
+    }
+    else {
+        console.log(i);
+    }
+}*/
+
+/* ---------------------------------
+6 d)
+--------------------------------- */
+for (let zeile: number = 4; zeile <= 8; zeile++) {
+    let hashtagZeile: string = "\n";
+    while (hashtagZeile.length < zeile) {
+        hashtagZeile = hashtagZeile + "#";
+    }
+    console.log(hashtagZeile);
 }
