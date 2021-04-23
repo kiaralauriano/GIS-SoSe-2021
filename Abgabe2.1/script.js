@@ -214,11 +214,41 @@ for (let i: number = 1; i <= 100; i++) {
 /* ---------------------------------
 6 d)
 --------------------------------- */
-for (let zeile = 4; zeile <= 8; zeile++) {
-    let hashtagZeile = "\n";
-    while (hashtagZeile.length < zeile) {
-        hashtagZeile = hashtagZeile + "#";
+/*
+let size: number = 8;
+let output: string = "";
+for (let zeile: number = 0; zeile < size; zeile++) {
+    for (let spalte: number = 0; spalte < size; spalte++) {
+        if ((zeile + spalte) % 2) {
+            output = output + " ";
+        } else {
+            output = output + "#";
+        }
     }
-    console.log(hashtagZeile);
+    output += "\n";
 }
+
+
+*/
+/* ---------------------------------
+6 e)
+--------------------------------- */
+/*
+output = "";
+schachbrettmod(8, 8);
+
+function schachbrettmod(sizeZ: number, sizeS: number): void {
+    for (let zeile: number = 0; zeile < sizeZ; zeile++) {
+        for (let spalte: number = 0; spalte < sizeS; spalte++) {
+            if ((zeile + spalte) % 2) {
+                output = output + " ";
+            } else {
+                output = output + "#";
+            }
+        }
+        output += "\n";
+    }
+    console.log(output);
+}
+*/ 
 //# sourceMappingURL=script.js.map
