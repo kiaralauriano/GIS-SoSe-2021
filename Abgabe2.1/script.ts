@@ -1,4 +1,4 @@
-/* function a1(): void {
+function a1(): void {
     let x: string = "Alles";
     console.log(x);
     func1();
@@ -15,7 +15,7 @@ function func1(): void {
 }
 function func2(): void {
     console.log("Klar?");
-}*/
+}
 
 
 /* ---------------------------------
@@ -28,7 +28,7 @@ Dann wird Zeile 4 ausgeführt, dadurch kommen wir in Zeile 11 und "Klar?" wird a
 Und dann Zeile 5 und es wird "Logo!" ausgegeben.
 --------------------------------- */
 
-/*function a2(): void {
+function a2(): void {
     let i: number = 9;
 
     do {
@@ -37,12 +37,12 @@ Und dann Zeile 5 und es wird "Logo!" ausgegeben.
     } while (i > 0);
 }
 
-a2();*/
+a2();
 /* ---------------------------------
 2 
 a) Es werden Zahlen 9-1 ausgegeben, rückwärts.
 Es verändert sich in der do Funktion was. Wir fügen in i = 9 ein.
-Dann wird jeweils die Zahl so lange subtrahiert bis es größer ist als 0.
+Dann wird jeweils die Zahl so lange subtrahiert solange es größer als 0 ist.
 Heißt bis 1. Dann wird alles ausgegeben und man kommt aus der Schleife raus.
 b)
 --------------------------------- */
@@ -52,34 +52,34 @@ a) A1: let als Variable "y" setzen und nicht "x" log ändern, findet die Console
 Und das Terminal sagt dass "y" deklariert ist, aber nirgendwo gefunden wird. 
 --------------------------------- */
 
-/*let x: string = "Hallo";
+let x: string = "Hallo";
 console.log(x);
-func1(x);
+func3(x);
 console.log(x);
-func2();
-func3();
+func4();
+func5();
 console.log(x);
 
-function func1(y: string): void{
+function func3(y: string): void{
     y = "Bla";
     console.log(y);
 }
 
-function func2(): void{
+function func4(): void{
     let x: string = "Blubb";
     console.log(x);
 }
 
-function func3(): void{
+function func5(): void{
     x = "Test";
-}*/
+}
 
 /* ---------------------------------
 4 
 a) Die Konsole gibt aus: "Hallo", "Bla", "Hallo", "Blubb", "Test".
 Ich hatte recht.
 b) Globale Variable: Überall darauf zugreifbar und veränderbar
-Lokale Variable: Variablen, die in einer Methode deklariert wurde und Variablen, die mit einer Methode als Parameter übergeben werden.
+Lokale Variable: Variablen, die innerhalb in einer Funktion sind und nur innerhalb ihres Blockes bekannt ist.
 Übergabeparametern: Gibt an, was eine Funktion nach einem Durchlauf weitergibt z.B. void: Die Funktion übergibt keinen Parameter.
 "Normale Variablen" können  nur mit einem bestimmten Datentypen deklariert werden z.B. String mit Buchstaben.
 Eine Funktion kann aus mehreren unterschiedlichen Variablen und Datentypen bestehen.
@@ -89,19 +89,19 @@ Sie ähneln sich insofern, dass beide mit einem Varbiablennamen benannt werden k
 /* ---------------------------------
 5 a)
 --------------------------------- */
-/*let z: number = multipy(5, 9);
+let z: number = multiply(5, 9);
 
-function multipy(_x: number, _y: number): number{
+function multiply(_x: number, _y: number): number{
     let ergebniss: number = _x * _y;
     return ergebniss;
 }
 
 console.log(z);
-*/
+
 /* ---------------------------------
 5 b)
 --------------------------------- */
-/* 
+ 
 let n: number = max(22, 50);
 function max(_a: number, _b: number): number {
     if (_a > _b) {
@@ -110,13 +110,13 @@ function max(_a: number, _b: number): number {
         return _b;
     }
 }
-console.log(n);*/
+console.log(n);
 
 
 /* ---------------------------------
 5 c)
 --------------------------------- */
-/*
+
 function f (): void{
 
     let x: number = 1;
@@ -124,19 +124,19 @@ function f (): void{
     console.log(x);
 
     while (x < 100) {
-
+        
         x = x + 1; 
 
         console.log(x);
-    }
+    }  
 }
 
-f();*/
+f();
 
 /* ---------------------------------
 5 d)
 --------------------------------- */
-/*
+
 for (let i: number = 0; i < 10; i++) {
     let min: number = 1;
     let max: number = 100;
@@ -145,11 +145,11 @@ for (let i: number = 0; i < 10; i++) {
     let r: number = Math.floor(Math.random() * (max - min)) + min;
     console.log(r);
 }
-*/
+
 /* ---------------------------------
 5 e)
 --------------------------------- */
-/*console.log(factrorial(7));
+console.log(factrorial(7));
 function factrorial(n: number): number {
     let fuc: number = 1;
     for (let i: number = 1; i <= n; i++) {
@@ -157,11 +157,11 @@ function factrorial(n: number): number {
     }
     return fuc;
 }
-*/
+
 /* ---------------------------------
 5 f)
 --------------------------------- */
-/*
+
 leapyears();
 function leapyears(): void {
     let date: Date = new Date();
@@ -174,24 +174,24 @@ function leapyears(): void {
         }
     }
 }
-*/
+
 
 /* ---------------------------------
 6 a)
 --------------------------------- */
-/*
+
 for (let zeile: number = 1; zeile <= 7; zeile++) {
     let hashtagZeile: string = "";
     while (hashtagZeile.length < zeile) {
         hashtagZeile = hashtagZeile + "#";
     }
     console.log(hashtagZeile);
-}*/
+}
 
 /* ---------------------------------
 6 b)
 --------------------------------- */
-/* 
+
 for (let i: number = 1; i <= 100; i++) {
     if ((i % 3) == 0) {
         console.log("Fizz");
@@ -202,29 +202,28 @@ for (let i: number = 1; i <= 100; i++) {
         console.log(i);
     }
 }
-*/
+
 /* ---------------------------------
 6 c)
 --------------------------------- */
-/* 
-for (let i: number = 1; i <= 100; i++) {
-    if ((i % 3) == 0) {
-        console.log("Fizz");
+
+for (let index: number = 1; index <= 100; index++) {
+    let output: string = index.toString();
+    if ((index % 3) == 0 && (index % 5) == 0) { 
+        output = "FizzBuzz";
+    } else if ((index % 3) == 0) {
+        output = "Fizz";
+    } else if ((index % 5) == 0) {
+        output = "Buzz";
     }
-    if ((i % 5) == 0 && !((i % 3) == 0)) {
-        console.log("Buzz");
-    } else if ((i % 15) == 0) {
-        console.log("FizzBuzz");
-    }
-    else {
-        console.log(i);
-    }
-}*/
+    console.log(output);
+}
+
 
 /* ---------------------------------
 6 d)
 --------------------------------- */
-/*
+
 let size: number = 8;
 let output: string = "";
 for (let zeile: number = 0; zeile < size; zeile++) {
@@ -239,12 +238,11 @@ for (let zeile: number = 0; zeile < size; zeile++) {
 }
 
 
-*/
+
 /* ---------------------------------
 6 e)
 --------------------------------- */
 
-/* 
 output = "";
 schachbrettmod(8, 8);
 
@@ -261,4 +259,3 @@ function schachbrettmod(sizeZ: number, sizeS: number): void {
     }
     console.log(output);
 }
-*/
