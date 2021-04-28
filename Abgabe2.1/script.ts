@@ -80,7 +80,8 @@ a) Die Konsole gibt aus: "Hallo", "Bla", "Hallo", "Blubb", "Test".
 Ich hatte recht.
 b) Globale Variable: Überall darauf zugreifbar und veränderbar
 Lokale Variable: Variablen, die innerhalb in einer Funktion sind und nur innerhalb ihres Blockes bekannt ist.
-Übergabeparametern: Gibt an, was eine Funktion nach einem Durchlauf weitergibt z.B. void: Die Funktion übergibt keinen Parameter.
+Übergabeparametern: Übergabeparameter sind die Werte, die zwischen den Klammern stehen. 
+Bei Übergabeparametern finden generell "Kopievorgänge" statt, d.h. es werden Werte kopiert.
 "Normale Variablen" können  nur mit einem bestimmten Datentypen deklariert werden z.B. String mit Buchstaben.
 Eine Funktion kann aus mehreren unterschiedlichen Variablen und Datentypen bestehen.
 Sie ähneln sich insofern, dass beide mit einem Varbiablennamen benannt werden können und durch diesen aufgerufen werden können.
