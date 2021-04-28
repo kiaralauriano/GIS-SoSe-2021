@@ -2,13 +2,11 @@
 /* ---------------------------------
 1 a)
 --------------------------------- */
-/*
 console.log("Die kleinste Zahl ist: " + min(0, 20, 13, -1, 5));
-
-function min(...nr: number[]): number {
-    let smallest: number = nr[0];
-    for (let index: number = 0; index < nr.length; index++) {
-        const actNr: number = nr[index];
+function min(...nr) {
+    let smallest = nr[0];
+    for (let index = 0; index < nr.length; index++) {
+        const actNr = nr[index];
         if (actNr < smallest) {
             smallest = actNr;
         }
@@ -18,22 +16,22 @@ function min(...nr: number[]): number {
 /* ---------------------------------
 1 b)
 --------------------------------- */
-/*
 console.log("50 ist: " + isEven(50));
 console.log("75 ist: " + isEven(75));
 console.log("-1 ist: " + isEven(-1)); // Es geht nicht, da es ein Minuswert ist und sich dadurch eine unendliche Rekursion ergibt.
-
-function isEven(nr: number): boolean {
+function isEven(nr) {
     // Ergaenzung fuer negative Zahlen
     if (nr < 0) {
-       nr = 0 - nr;
+        nr = 0 - nr;
     }
     // b) Aufgabe
     if (nr == 0) {
         return true;
-    } else if (nr == 1) {
+    }
+    else if (nr == 1) {
         return false;
-    } else {
+    }
+    else {
         return isEven(nr - 2);
     }
 }
@@ -71,13 +69,29 @@ function showInfo(studi: Student): void {
 /* ---------------------------------
 1 c) 5.
 --------------------------------- */
+class Student {
+    constructor(_surName, _lastName, _age, _matNr, _sex) {
+        this.surName = _surName;
+        this.lastName = _lastName;
+        this.age = _age;
+        this.matNr = _matNr;
+        this.sex = _sex;
+    }
+    showInfo() {
+        console.log("Name: " + this.surName + " " + this.lastName);
+        console.log("Alter: " + this.age);
+        console.log("Geschlecht: " + this.sex);
+        console.log("Mat.-Nr.: " + this.matNr);
+    }
+}
+let stRiver = new Student("River", "Miller", 22, 12345, "♂ (m)");
+stRiver.showInfo();
 /* ---------------------------------
 2 a)
 --------------------------------- */
-/*
-function backwards(array: number[]): number[] {
-    let backwardArray: number[] = [];
-    for (let index: number = array.length - 1; index >= 0; index--) {
+function backwards(array) {
+    let backwardArray = [];
+    for (let index = array.length - 1; index >= 0; index--) {
         backwardArray[index] = array[array.length - index - 1];
     }
     return backwardArray;
@@ -85,12 +99,11 @@ function backwards(array: number[]): number[] {
 /* ---------------------------------
 2 b)
 --------------------------------- */
-/*
-function join(...arrays: number[][]): number[] {
-    let backArray: number[] = [];
-    let retIndex: number = 0;
+function join(...arrays) {
+    let backArray = [];
+    let retIndex = 0;
     arrays.forEach(array => {
-        for (let index: number = 0; index < array.length; index++) {
+        for (let index = 0; index < array.length; index++) {
             backArray[retIndex] = array[index];
             retIndex++;
         }
@@ -100,20 +113,21 @@ function join(...arrays: number[][]): number[] {
 /* ---------------------------------
 2 c)
 --------------------------------- */
-/*
-function split(array: number[], i1: number, i2: number): number[] {
+function split(array, i1, i2) {
     if (i1 < 0 || i2 < 0) {
         return undefined;
-    } else if (i2 < i1) {
-        let temp: number = i1;
+    }
+    else if (i2 < i1) {
+        let temp = i1;
         i1 = i2;
         i2 = temp;
-    } else if (i2 > array.length) {
+    }
+    else if (i2 > array.length) {
         return undefined;
     }
-    let backArray: number[] = [];
-    let i: number = 0;
-    for (let index: number = i1; index <= i2; index++) {
+    let backArray = [];
+    let i = 0;
+    for (let index = i1; index <= i2; index++) {
         backArray[i] = array[index];
         i++;
     }
@@ -122,19 +136,18 @@ function split(array: number[], i1: number, i2: number): number[] {
 /* ---------------------------------
 2 Testcode
 --------------------------------- */
-/*
-let arr: number[] = [5, 42, 17, 2018, -10, 60, -10010];
-let arrBack: number[] = backwards(arr);
+let arr = [5, 42, 17, 2018, -10, 60, -10010];
+let arrBack = backwards(arr);
 console.log(arr);
 console.log(arrBack);
-console.log(join(arr, [15, 9001, -440] ));
-console.log(join([123, 666, -911], arr, [15, 9001, -440, 1024] )); // Bonus b)
+console.log(join(arr, [15, 9001, -440]));
+console.log(join([123, 666, -911], arr, [15, 9001, -440, 1024])); // Bonus b)
 arr = split(arr, 0, 4);
 console.log(arr);
 console.log(split(arr, 1, 2));
-console.log(split(arr, 2, 0));     // Bonus c)
-console.log(split(arr, -1, 2));    // Bonus c)
-console.log(split(arr, 0, 7));     // Bonus c)
+console.log(split(arr, 2, 0)); // Bonus c)
+console.log(split(arr, -1, 2)); // Bonus c)
+console.log(split(arr, 0, 7)); // Bonus c)
 /* ---------------------------------
 3 a)
 --------------------------------- */
@@ -162,12 +175,12 @@ context.closePath();
 context.fillStyle = "brown";
 context.fillRect(175, 100, 50, 300);
 context.beginPath();
-context.fillStyle = "green";
+context.fillStyle = "darkgreen";
 context.arc(200, 150, 75, 0, 2 * Math.PI, false);
 context.fill();
 context.closePath();
 // Haus
-context.fillStyle = "yellow";
+context.fillStyle = "beige";
 context.fillRect(500, 250, 200, 200);
 context.beginPath();
 context.fillStyle = "red";

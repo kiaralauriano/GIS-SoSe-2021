@@ -1,7 +1,6 @@
 /* ---------------------------------
 1 a)
 --------------------------------- */
-/* 
 console.log("Die kleinste Zahl ist: " + min(0, 20, 13, -1, 5));
 
 function min(...nr: number[]): number {
@@ -17,7 +16,6 @@ function min(...nr: number[]): number {
 /* ---------------------------------
 1 b)
 --------------------------------- */
-/* 
 console.log("50 ist: " + isEven(50));
 console.log("75 ist: " + isEven(75));
 console.log("-1 ist: " + isEven(-1)); // Es geht nicht, da es ein Minuswert ist und sich dadurch eine unendliche Rekursion ergibt.
@@ -70,10 +68,34 @@ function showInfo(studi: Student): void {
 /* ---------------------------------
 1 c) 5.
 --------------------------------- */
+class Student {
+    surName: String;
+    lastName: String;
+    age: number;
+    matNr: number;
+    sex: String;
+
+    constructor(_surName: String, _lastName: String, _age: number, _matNr: number, _sex: String) {
+        this.surName = _surName;
+        this.lastName = _lastName;
+        this.age = _age;
+        this.matNr = _matNr;
+        this.sex = _sex;
+    }
+
+    showInfo(): void {
+        console.log("Name: " + this.surName + " " + this.lastName);
+        console.log("Alter: " + this.age);
+        console.log("Geschlecht: " + this.sex);
+        console.log("Mat.-Nr.: " + this.matNr);
+    }
+}
+let stRiver: Student = new Student("River", "Miller", 22, 12345, "♂ (m)");
+stRiver.showInfo();
+
 /* ---------------------------------
 2 a)
 --------------------------------- */
-/*
 function backwards(array: number[]): number[] {
     let backwardArray: number[] = [];
     for (let index: number = array.length - 1; index >= 0; index--) {
@@ -84,7 +106,6 @@ function backwards(array: number[]): number[] {
 /* ---------------------------------
 2 b)
 --------------------------------- */
-/*
 function join(...arrays: number[][]): number[] {
     let backArray: number[] = [];
     let retIndex: number = 0;
@@ -99,7 +120,6 @@ function join(...arrays: number[][]): number[] {
 /* ---------------------------------
 2 c)
 --------------------------------- */
-/*
 function split(array: number[], i1: number, i2: number): number[] {
     if (i1 < 0 || i2 < 0) {
         return undefined;
@@ -121,7 +141,6 @@ function split(array: number[], i1: number, i2: number): number[] {
 /* ---------------------------------
 2 Testcode
 --------------------------------- */
-/*
 let arr: number[] = [5, 42, 17, 2018, -10, 60, -10010];
 let arrBack: number[] = backwards(arr);
 console.log(arr);
@@ -165,13 +184,13 @@ context.closePath();
 context.fillStyle = "brown";
 context.fillRect(175, 100, 50, 300);
 context.beginPath();
-context.fillStyle = "green";
+context.fillStyle = "darkgreen";
 context.arc(200, 150, 75, 0, 2 * Math.PI, false);
 context.fill();
 context.closePath();
 
 // Haus
-context.fillStyle = "yellow";
+context.fillStyle = "beige";
 context.fillRect(500, 250, 200, 200);
 context.beginPath();
 context.fillStyle = "red";
