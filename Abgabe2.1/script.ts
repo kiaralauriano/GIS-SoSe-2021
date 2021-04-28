@@ -117,22 +117,14 @@ console.log(n);
 /* ---------------------------------
 5 c)
 --------------------------------- */
-
-function f (): void{
-
-    let x: number = 1;
-
-    console.log(x);
-
-    while (x < 100) {
-        
-        x = x + 1; 
-
-        console.log(x);
-    }  
+console.log("Alle Werte von 0 bis 100 aufaddiert");
+let erg = 0;
+let i: number = 1;
+while (i <= 100) {
+    erg = erg + i;
+    i++;
 }
-
-f();
+console.log(erg);
 
 /* ---------------------------------
 5 d)
