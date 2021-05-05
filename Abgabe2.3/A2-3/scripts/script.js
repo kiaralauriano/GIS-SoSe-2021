@@ -19,7 +19,7 @@ class Posibility {
     }
 }
 exports.Posibility = Posibility;
-let path = window.pathname.substring(window.location.pathname.lastIndexOf("/") + 1);
+let path = window.location.pathname.substring(window.location.pathname.lastIndexOf("/") + 1);
 if (path == "index.html" || path == "") {
     let imageTop = document.getElementById("picTop");
     let imageMiddle = document.getElementById("picMiddle");

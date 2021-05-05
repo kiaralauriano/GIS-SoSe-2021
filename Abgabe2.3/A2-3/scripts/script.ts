@@ -26,7 +26,7 @@ export interface Selected {
     bottom: Posibility;
 }
 
-let path: string = window.pathname.substring(window.location.pathname.lastIndexOf("/") + 1);
+let path: string = window.location.pathname.substring(window.location.pathname.lastIndexOf("/") + 1);
 if (path == "index.html" || path == "" ) {
     let imageTop: HTMLImageElement = <HTMLImageElement>document.getElementById("picTop");
     let imageMiddle: HTMLImageElement = <HTMLImageElement>document.getElementById("picMiddle");
