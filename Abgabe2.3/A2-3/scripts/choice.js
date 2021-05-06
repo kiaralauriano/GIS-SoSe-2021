@@ -1,8 +1,6 @@
 "use strict";
 var Aufgabe2_3;
 (function (Aufgabe2_3) {
-    //import { Posibility } from "./script";
-    //import { posibilityBottom, posibilityMiddle, posibilityTop, selectedElements } from "./data";
     let selected;
     let htmlImgs = [];
     let path = window.location.pathname.substring(window.location.pathname.lastIndexOf("/") + 1);
