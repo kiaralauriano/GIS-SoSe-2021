@@ -10,3 +10,19 @@ Buttons
 /* ---------------------------------
 Images
 --------------------------------- */
+.selectedImage{
+    border: 2px solid blue;
+    box-shadow:0px 12px 22px 1px #333;
+ }
+
+ .detailImg{
+     /*TODO*/
+     max-width: 200px;
+     max-height: 200px;
+ }
+
+
+.blockChildren *{
+    margin: auto;
+    display: block;
+}

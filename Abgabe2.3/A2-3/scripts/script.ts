@@ -1,4 +1,5 @@
-import { posibilityBottom, posibilityMiddle, posibilityTop } from "./data";
+namespace Aufgabe2_3 {
+//import { posibilityBottom, posibilityMiddle, posibilityTop } from "./data";
 
 export class Posibility {
     name: string;
@@ -62,4 +63,5 @@ if (path == "index.html" || path == "" ) {
     }
 
 
+}
 }

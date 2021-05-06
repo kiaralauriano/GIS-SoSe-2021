@@ -1,5 +1,6 @@
-import { Posibility } from "./script";
-import { posibilityBottom, posibilityMiddle, posibilityTop, selectedElements } from "./data";
+namespace Aufgabe2_3 {
+//import { Posibility } from "./script";
+//import { posibilityBottom, posibilityMiddle, posibilityTop, selectedElements } from "./data";
 
 let selected: Posibility;
 let htmlImgs: HTMLImageElement[] = [];
@@ -69,3 +70,4 @@ function cancelSelection(): void {
     console.log("cancel");
 }
 
+}
