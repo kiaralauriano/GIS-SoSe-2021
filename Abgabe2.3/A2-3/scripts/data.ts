@@ -1,5 +1,5 @@
 namespace Aufgabe2_3 {
-//import { Posibility, Selected } from "./script";
+
 
 export let posibilityTop: Posibility[] = [];
 export let posibilityMiddle: Posibility[] = [];

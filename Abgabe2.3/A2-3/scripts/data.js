@@ -1,7 +1,6 @@
 "use strict";
 var Aufgabe2_3;
 (function (Aufgabe2_3) {
-    //import { Posibility, Selected } from "./script";
     Aufgabe2_3.posibilityTop = [];
     Aufgabe2_3.posibilityMiddle = [];
     Aufgabe2_3.posibilityBottom = [];
