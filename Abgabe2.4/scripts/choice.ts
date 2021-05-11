@@ -33,11 +33,15 @@ function loadContent(): void {
     }
 
     if (selectedElements.top == undefined || selectedElements.middle == undefined || selectedElements.bottom == undefined) {
-        btSave.textContent = "futher";
+        btSave.textContent = "next";
         btAbort.textContent = "back";
         if (path == "top.html") {
             btAbort.disabled = true;
         }
+        btAbort.addEventListener("click", back);
+    } else {
+        btSave.textContent = "Save";
+        btAbort.textContent = "Cancel";
         btAbort.addEventListener("click", cancel);
     }
 }
@@ -70,6 +74,7 @@ function addDetailWi(images: Posibility[]): void {
         divToAdd.appendChild(imgElement);
     });
 }
+
 function setSelected(img: Posibility, imgElement: HTMLImageElement): void {
     selected = img;
     imgElement.className += " selectedImage";
@@ -91,7 +96,12 @@ function saveSelection(): void {
     }
     selectedToJSON();
     window.open("index.html", "_self");
-    console.log("Cancel"); 
+    console.log("selected:" + selected.name); 
+}
+
+function cancel(): void {
+    window.open("index.html", "_self");
+    console.log("Cancel");
 }
 
 function back(): void {

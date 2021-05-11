@@ -14,27 +14,32 @@ var Aufgabe2_4;
     function loadContent() {
         let json = sessionStorage.getItem(Aufgabe2_4.keyConfig);
         if (json != null) {
-            selectedFromJSON(json);
+            Aufgabe2_4.selectedFromJSON(json);
         }
         loadImages();
         if (path == "top.html") {
             selected = Aufgabe2_4.selectedElements.top;
-            addDetailWi(posibilityTop);
+            addDetailWi(Aufgabe2_4.posibilityTop);
         }
         else if (path == "middle.html") {
             selected = Aufgabe2_4.selectedElements.middle;
-            addDetailWi(posibilityMiddle);
+            addDetailWi(Aufgabe2_4.posibilityMiddle);
         }
         else if (path == "bottom.html") {
             selected = Aufgabe2_4.selectedElements.bottom;
-            addDetailWi(posibilityBottom);
+            addDetailWi(Aufgabe2_4.posibilityBottom);
         }
         if (Aufgabe2_4.selectedElements.top == undefined || Aufgabe2_4.selectedElements.middle == undefined || Aufgabe2_4.selectedElements.bottom == undefined) {
-            btSave.textContent = "futher";
+            btSave.textContent = "next";
             btAbort.textContent = "back";
             if (path == "top.html") {
                 btAbort.disabled = true;
             }
+            btAbort.addEventListener("click", back);
+        }
+        else {
+            btSave.textContent = "Save";
+            btAbort.textContent = "Cancel";
             btAbort.addEventListener("click", cancel);
         }
     }
@@ -85,7 +90,11 @@ var Aufgabe2_4;
         else if (path == "bottom.html") {
             Aufgabe2_4.selectedElements.bottom = selected;
         }
-        selectedToJSON();
+        Aufgabe2_4.selectedToJSON();
+        window.open("index.html", "_self");
+        console.log("selected:" + selected.name);
+    }
+    function cancel() {
         window.open("index.html", "_self");
         console.log("Cancel");
     }
