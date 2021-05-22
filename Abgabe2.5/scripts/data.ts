@@ -6,7 +6,7 @@ namespace Aufgabe2_5 {
     export let posibilityBottom: Posibility[] = [];
 
     export function allPosArrayToJSON(): string {
-        let allPosArray: AllPosArrayInterface = { top: posibilityTop, middle: posibilityMiddle, bottom. posibilityBottom};
+        let allPosArray: AllPosArrayInterface = { top: posibilityTop, middle: posibilityMiddle, bottom: posibilityBottom};
         let json: string = JSON.stringify(allPosArray);
         return json;
     }

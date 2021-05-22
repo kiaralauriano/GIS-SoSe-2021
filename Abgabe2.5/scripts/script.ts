@@ -39,9 +39,9 @@ namespace Aufgabe2_5 {
     }
 
     export interface AllPosArrayInterface {
-        top: Posibility;
-        middle: Posibility;
-        bottom: Posibility;
+        top: Posibility[];
+        middle: Posibility[];
+        bottom: Posibility[];
     }
 
     export function selectedToJSON(): void {
