@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Aufgaben",
   "main": "script.js",
-  "scripts":  {
-    "start": "node Abgabe3.1/script.js", 
+  "scripts": {
+    "start": "node Abgabe3.1/script.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/kiaralauriano/GIS-SoSe-2021/issues"
   },
-  "homepage": "https://github.com/kiaralauriano/GIS-SoSe-2021#readme"
+  "homepage": "https://github.com/kiaralauriano/GIS-SoSe-2021#readme",
+  "dependencies": {
+    "@types/node": "^15.6.1"
+  }
 }
