@@ -5,7 +5,7 @@ namespace Aufgabe3_1 {
     btSend.addEventListener("click", send);
 
     async function send(): Promise<void> {
-        let url: string = "https://kiaralauriano.herokuapp.com/";
+        let url: string = "https://kiaralauriano.herokuapp.com";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
         let response: Response = await fetch(url);
