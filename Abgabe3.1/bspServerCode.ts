@@ -21,6 +21,6 @@ export namespace Aufgabe_3_1Server {
         _response.setHeader("content-type", "text/html; charset=utf-8"); //Antwort HTML
         _response.setHeader("Access-Control-Allow-Origin", "*");
         _response.write(_request.url); // Antwort URL
-        _response.end(); //Antwort
+        _response.end(); //Antwort beenden
     }
 }
