@@ -1,17 +1,17 @@
 {
   "name": "gis-sose-2021",
   "version": "1.0.0",
-  "description": "",
+  "description": "Aufgaben",
   "main": "script.js",
   "scripts":  {
-    "start": "node bspServerCode.js", 
+    "start": "node Abgabe3.1/bspServerCode.js", 
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kiaralauriano/GIS-SoSe-2021.git"
   },
-  "author": "",
+  "author": "Kiara Lauriano",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kiaralauriano/GIS-SoSe-2021/issues"
