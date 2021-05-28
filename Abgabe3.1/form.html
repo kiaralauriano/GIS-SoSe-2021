@@ -6,18 +6,36 @@
         <meta name="author" content="Kiara Lauriano"/>
         <meta name="description" content="Abgabe31" />
 		<meta name="keywords" content="lernen, basic, js" />
-        <meta name="viewport" content="widht=device-width, initial-scale=1.0">   
+        <meta name="viewport" content="widht=device-width, initial-scale=1.0">
+        <script src="script.js" defer></script>  
 </head>
 <body>
     <header>
-        
+        <h4>1&2</h4>
     </header>
 
     <main>
+        <h3>Login</h3> 
         <form action="https://kiaralauriano.herokuapp.com" method="GET">
-            <input name="name" type="text" placeholder="Name">
-            <input name="email" type="email" placeholder="E-Mail" required>
-            <button type="submit">Send</button>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">female</label>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">divers</label>
+    
+            <p><label for="fname">Firstname:</label></p>
+            <input type="text" id="fname" name="fname"> 
+            <p><label for="lname">Lastname:</label></p>
+            <input type="text" id="nname" name="nname">
+            <p><label for="street">Address and Number:</label></p>
+            <input type="text" id="street" name="street">
+            <p><label for="plz">Post Code:</label></p>
+            <input type="text" id="plz" name="plz">
+            <p><label for="city">City:</label></p>
+            <input type="text" id="city" name="city">
+
+            <p><button type="submit">Send</button></p>
         </form>
     </main>
 
