@@ -1,16 +1,18 @@
-namespace Aufgabe2_5 {
-    document.getElementsByTagName("button")[0].addEventListener("click", sendData);
-
+namespace Aufgabe3_2 {
+    let urlServer: string = "http://localhost:8100";
+    let btSendJSON: HTMLButtonElement = <HTMLButtonElement>document.getElementById("sendJSON");
+    btSendJSON.addEventListener("click", sendData);
 
     async function sendData(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "https://kiaralauriano.herokuapp.com";
+        let url: string = urlServer + "/json";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
         let answer: Response = await fetch(url);
         console.log("Response: ", answer);
-        let back: string = await answer.text();
-        console.log(back);
+        let json: JSON = await answer.json();
+        console.log(json);
+       // document.getElementById("solution").innerHTML = json;
     }
 
 }

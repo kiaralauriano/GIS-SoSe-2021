@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Aufgabe_3_1Server = void 0;
+exports.Aufgabe_3_2Server = void 0;
 const Http = require("http");
-var Aufgabe_3_1Server;
-(function (Aufgabe_3_1Server) {
+const Url = require("url");
+var Aufgabe_3_2Server;
+(function (Aufgabe_3_2Server) {
     console.log("Starting server"); //Konsolenausgabe: "Startin server" 
     let port = Number(process.env.PORT); // Nimmt sich den aktuellen Port
     if (!port)
@@ -19,9 +20,18 @@ var Aufgabe_3_1Server;
         console.log("I hear voices!"); //Terminalausgabe: "I hear voices"
         _response.setHeader("content-type", "text/html; charset=utf-8"); //Eigenschaften des Headers werden festgelegt mit setHeader
         _response.setHeader("Access-Control-Allow-Origin", "*"); //Zugangsberechtigung = Wer hat Zugriff?
-        _response.write(_request.url); // Die URL vom Request wird in die Response geschrieben
-        console.log(_request.url); //URL vom Request wird ausgegeben
+        let url = Url.parse(_request.url, true);
+        let query = url.query;
+        if (url.pathname == "/html") {
+            for (let key in query) {
+                let value = query[key];
+                _response.write("<p>KEY: " + key + ", Value: " + value + "</p>");
+            }
+        }
+        if (url.pathname == "/json") {
+            _response.write(JSON.stringify(query));
+        }
         _response.end(); //Response wird beendet
     }
-})(Aufgabe_3_1Server = exports.Aufgabe_3_1Server || (exports.Aufgabe_3_1Server = {}));
+})(Aufgabe_3_2Server = exports.Aufgabe_3_2Server || (exports.Aufgabe_3_2Server = {}));
 //# sourceMappingURL=bspServerCode.js.map
