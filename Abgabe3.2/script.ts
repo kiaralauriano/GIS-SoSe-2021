@@ -1,18 +1,18 @@
+namespace Aufgabe2_5 {
+    document.getElementsByTagName("button")[0].addEventListener("click", sendData);
 
-document.getElementsByTagName("button")[0].addEventListener("click", sendData);
 
+    async function sendData(): Promise<void> {
+        let formData: FormData = new FormData(document.forms[0]);
+        let url: string = "https://kiaralauriano.herokuapp.com";
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
+        url = url + "?" + query.toString();
+        let answer: Response = await fetch(url);
+        console.log("Response: ", answer);
+        let back: string = await answer.text();
+        console.log(back);
+    }
 
-async function sendData(): Promise<void> {
-    let formData: FormData = new FormData(document.forms[0]);
-    let url: string = "https://kiaralauriano.herokuapp.com";
-    let query: URLSearchParams = new URLSearchParams(<any>formData);
-    url = url + "?" + query.toString();
-    let answer: Response = await fetch(url);
-    console.log("Response: ", answer);
-    let back: string = await answer.text();
-    console.log(back);
 }
-
-
 
 

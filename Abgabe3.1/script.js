@@ -9,5 +9,6 @@ async function sendData() {
     console.log("Response: ", answer);
     let back = await answer.text();
     console.log(back);
+    document.getElementById("solution").innerHTML = back;
 }
 //# sourceMappingURL=script.js.map

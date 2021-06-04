@@ -11,6 +11,7 @@ async function sendData(): Promise<void> {
     console.log("Response: ", answer);
     let back: string = await answer.text();
     console.log(back);
+    document.getElementById("solution").innerHTML = back;
 }
 
 
