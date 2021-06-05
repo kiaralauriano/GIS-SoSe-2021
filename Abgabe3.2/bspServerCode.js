@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Aufgabe_3_2Server = void 0;
 const Http = require("http");
+//simport { type } from "os";
 const Url = require("url");
 var Aufgabe_3_2Server;
 (function (Aufgabe_3_2Server) {

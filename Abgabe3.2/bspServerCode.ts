@@ -1,5 +1,5 @@
 import * as Http from "http";
-import { type } from "os";
+//simport { type } from "os";
 import * as Url from "url";
 
 export namespace Aufgabe_3_2Server {
