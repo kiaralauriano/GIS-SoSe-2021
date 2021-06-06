@@ -1,5 +1,4 @@
 import * as Http from "http";
-//simport { type } from "os";
 import * as Url from "url";
 
 export namespace Aufgabe_3_2Server {
@@ -21,24 +20,24 @@ export namespace Aufgabe_3_2Server {
         [type: string]: string | string[];
     }
 
-
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
         console.log("I hear voices!"); //Terminalausgabe: "I hear voices"
-        _response.setHeader("content-type", "text/html; charset=utf-8"); //Eigenschaften des Headers werden festgelegt mit setHeader
+        _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*"); //Zugangsberechtigung = Wer hat Zugriff?
         let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
         let query: Query = url.query;
 
-        if (url.pathname == "/html") {
-            for (let key in query) {
-                let value: string | string [] = query[key];
-                _response.write("<p>KEY: " + key + ", Value: " + value + "</p>");
+        if (url.pathname == "/html") {       //bin ich auf html?
+            for (let key in query) {    //gehe alle keys durch
+                let value: string | string[] = query[key];  //nehme für jeden key den value
+                _response.write("<p>KEY: " + key + ", Value: " + value + "</p>"); //schreibe die Verbindung aus Key und Value
             }
         }
-        
-        if (url.pathname == "/json") {
+        if (url.pathname == "/json") {       //oder auf json?
             _response.write(JSON.stringify(query));
         }
-        _response.end(); //Response wird beendet
+        _response.end();
     }
+        
+
 }

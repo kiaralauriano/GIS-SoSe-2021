@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Aufgabe_3_2Server = void 0;
 const Http = require("http");
-//simport { type } from "os";
 const Url = require("url");
 var Aufgabe_3_2Server;
 (function (Aufgabe_3_2Server) {
@@ -19,20 +18,20 @@ var Aufgabe_3_2Server;
     }
     function handleRequest(_request, _response) {
         console.log("I hear voices!"); //Terminalausgabe: "I hear voices"
-        _response.setHeader("content-type", "text/html; charset=utf-8"); //Eigenschaften des Headers werden festgelegt mit setHeader
+        _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*"); //Zugangsberechtigung = Wer hat Zugriff?
         let url = Url.parse(_request.url, true);
         let query = url.query;
-        if (url.pathname == "/html") {
-            for (let key in query) {
-                let value = query[key];
-                _response.write("<p>KEY: " + key + ", Value: " + value + "</p>");
+        if (url.pathname == "/html") { //bin ich auf html?
+            for (let key in query) { //gehe alle keys durch
+                let value = query[key]; //nehme für jeden key den value
+                _response.write("<p>KEY: " + key + ", Value: " + value + "</p>"); //schreibe die Verbindung aus Key und Value
             }
         }
-        if (url.pathname == "/json") {
+        if (url.pathname == "/json") { //oder auf json?
             _response.write(JSON.stringify(query));
         }
-        _response.end(); //Response wird beendet
+        _response.end();
     }
 })(Aufgabe_3_2Server = exports.Aufgabe_3_2Server || (exports.Aufgabe_3_2Server = {}));
 //# sourceMappingURL=bspServerCode.js.map
