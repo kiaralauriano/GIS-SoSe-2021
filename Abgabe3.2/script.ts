@@ -5,8 +5,9 @@ namespace Aufgabe3_2 {
     let btSendHTML: HTMLButtonElement = <HTMLButtonElement>document.getElementById("sendHTML");
     btSendHTML.addEventListener("click", sendHTML);
     
-    let urlServer: string = "http://localhost:8100";
+   // let urlServer: string = "http://localhost:8100";
     async function sendData(): Promise<void> {
+        let urlServer: string = "https://kiaralauriano.herokuapp.com";
         let formData: FormData = new FormData(document.forms[0]);
         let url: string = urlServer + "/json";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
@@ -21,7 +22,7 @@ namespace Aufgabe3_2 {
         _ev.preventDefault();
         let urlServer: string = "https://kiaralauriano.herokuapp.com";
         let formData: FormData = new FormData(document.forms[0]);
-        let url: string = urlServer + "/json";
+        let url: string = urlServer + "/html";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         query.append("type", "html");
         url = url + "?" + query.toString();
