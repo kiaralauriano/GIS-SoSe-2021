@@ -28,7 +28,7 @@ namespace Aufgabe3_2 {
         url = url + "?" + query.toString();
         let answer: Response = await fetch(url);
         let answerText: string = await answer.text();
-        console.log("Response: ", answer);
+        
         
         let body: HTMLBodyElement = document.querySelector("body");
         let result: HTMLParagraphElement = <HTMLDivElement>document.getElementById("solution");
