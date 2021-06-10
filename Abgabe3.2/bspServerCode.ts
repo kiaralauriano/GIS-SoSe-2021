@@ -22,7 +22,7 @@ export namespace Aufgabe_3_2Server {
 
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
         console.log("I hear voices!"); //Terminalausgabe: "I hear voices"
-        _response.setHeader("content-type", "text/html; charset=utf-8");
+        _response.setHeader("content-type", "application/json");
         _response.setHeader("Access-Control-Allow-Origin", "*"); //Zugangsberechtigung = Wer hat Zugriff?
         let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
         let query: Query = url.query;
