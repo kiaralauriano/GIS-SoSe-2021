@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Aufgabe_3_2Server = void 0;
+exports.Aufgabe_3_4Server = void 0;
 const Http = require("http");
 const Url = require("url");
-var Aufgabe_3_2Server;
-(function (Aufgabe_3_2Server) {
+var Aufgabe_3_4Server;
+(function (Aufgabe_3_4Server) {
     console.log("Starting server"); //Konsolenausgabe: "Startin server" 
     let port = Number(process.env.PORT); // Nimmt sich den aktuellen Port
     if (!port)
@@ -34,5 +34,5 @@ var Aufgabe_3_2Server;
         }
         _response.end();
     }
-})(Aufgabe_3_2Server = exports.Aufgabe_3_2Server || (exports.Aufgabe_3_2Server = {}));
+})(Aufgabe_3_4Server = exports.Aufgabe_3_4Server || (exports.Aufgabe_3_4Server = {}));
 //# sourceMappingURL=bspServerCode.js.map

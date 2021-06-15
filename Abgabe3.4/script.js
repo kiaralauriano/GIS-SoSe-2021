@@ -1,6 +1,6 @@
 "use strict";
-var Aufgabe3_2;
-(function (Aufgabe3_2) {
+var Aufgabe3_4;
+(function (Aufgabe3_4) {
     let btSendJSON = document.getElementById("sendJSON");
     btSendJSON.addEventListener("click", sendData);
     let btSendHTML = document.getElementById("sendHTML");
@@ -32,5 +32,5 @@ var Aufgabe3_2;
         result.innerHTML = answerText;
         body.appendChild(result);
     }
-})(Aufgabe3_2 || (Aufgabe3_2 = {}));
+})(Aufgabe3_4 || (Aufgabe3_4 = {}));
 //# sourceMappingURL=script.js.map
