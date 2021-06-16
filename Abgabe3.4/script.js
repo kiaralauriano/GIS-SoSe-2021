@@ -15,8 +15,7 @@ var Aufgabe3_4;
         query.append("command", "insert");
         let url = urlServer + "?" + query.toString();
         let response = await fetch(url);
-        let textAnswer, await, response, text;
-        ();
+        let textAnswer = await response.text();
         console.log(textAnswer);
         form.reset();
     }

@@ -1,5 +1,6 @@
 import * as Http from "http";
 import * as Url from "url";
+import * as Mongo from "mongodb";
 
 export namespace Aufgabe_3_4Server {
 
@@ -10,13 +11,23 @@ export namespace Aufgabe_3_4Server {
     if (!port) 
         port = 8100; // wenn es kein Port gibt, dann wird der Port mit dem wert 8100 initialisiert
 
-    let databaseURL: string = 
+    let databaseURL: string = "mongodb://localhost:27017";
 
-    function startServer(_port: number | string): void{
+    startServer(port);
+    connectToDatabase(databaseURL);
+
+    function startServer(_port: number | string): void {
         let server: Http.Server = Http.createServer(); //Erstellt neuen Server
         server.addListener("request", handleRequest); //Dem Server wird ein Listener angehängt, der so die Funktion handleRequest aufruft
         server.addListener("listening", handleListen); //Dem Server wird ein Listener angehängt, der so die Funktion handleListen aufruft
         server.listen(port); //Server hört auf den definierten Port
+    }
+
+    async function connectToDatabase(_port: number | string): Promise<void> {
+        let server: Http.Server = Http.createServer();
+        server.addListener("request", handleRequest);
+        server.addListener("listening", handleListen);
+        server.listen(_port);
     }
 
     function handleListen(): void { 
@@ -27,27 +38,54 @@ export namespace Aufgabe_3_4Server {
         [type: string]: string | string[];
     }
 
-    function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
-        console.log("I hear voices!"); //Terminalausgabe: "I hear voices"
-        
-        _response.setHeader("Access-Control-Allow-Origin", "*"); //Zugangsberechtigung = Wer hat Zugriff?
-        let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
-        let query: Query = url.query;
+    interface DBUser {
+        fname: string;
+        nname: string;
+        email: string;
+        password: string;
+    }
 
-        if (url.pathname == "/html") {       //bin ich auf html?
-            _response.setHeader("content-type", "text/html; charset=utf-8");
-            for (let key in query) {    //gehe alle keys durch
-                let value: string | string[] = query[key];  //nehme für jeden key den value
-                _response.write("<p>KEY: " + key + ", Value: " + value + "</p>"); //schreibe die Verbindung aus Key und Value
-
+    async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
+        console.log("I hear voices!");
+        _response.setHeader("content-type", "text/html; charset=utf-8");
+        _response.setHeader("Access-Control-Allow-Origin", "*");
+        if (_request.url) {
+            let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
+            let query: Query = url.query;
+            let command: string = <string>query.command;
+            if (command == "insert") {
+                let fname: string = <string>query.fname;    //mit <string> sind wir sicher, dass es ein String ist und kein String array
+                let nname: string = <string>query.nname;
+                let email: string = <string>query.email;
+                let password: string = <string>query.password;
+                if (fname && nname && email && password) {
+                    let dbUser: DBUser = { fname: fname, nname: nname, email: email, password: password };
+                    await storeData(dbUser);
+                    let jsonString: string = JSON.stringify(url.query);
+                    _response.write(jsonString);
+                    _response.write(" User saved successfully");
+                } else {
+                    console.log("Not hand over everything");
+                }
+            } else if (command == "get") {
+                let dbUsers: DBUser[] = await getAllDBUsers();
+                _response.write(JSON.stringify(dbUsers));
+            } else {
+                console.log("Wrong command");
             }
-        }
-        if (url.pathname == "/json") {       //oder auf json?
-            _response.setHeader("content-type", "application/json");
-            _response.write(JSON.stringify(query));
-            
+
         }
         _response.end();
+    }
+
+    async function storeData(_dbUser: DBUser): Promise <void> {
+        await collectionUser.insertOne(_dbUser);
+    }
+
+    async function getAllDBUsers(): Promise<DBUser[]> {
+        let dbUser: DBUser[];
+        dbUser = await collectionUser.find().toArray();
+        return dbUser;
     }
         
 

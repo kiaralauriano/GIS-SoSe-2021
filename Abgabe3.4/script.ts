@@ -5,7 +5,7 @@ namespace Aufgabe3_4 {
     btSend.addEventListener("click", sendData);
     let btBack: HTMLButtonElement = <HTMLButtonElement>document.getElementById("giveback");
     btBack.addEventListener("click", getData);
-    let form: HTMLFontElement = <HTMLFormElement> document.getElementById("form");
+    let form: HTMLFormElement = <HTMLFormElement> document.getElementById("form");
     
     let urlServer: string = "http://localhost:8100";
     //let urlServer: string = "https://kiaralauriano.herokuapp.com";
@@ -16,7 +16,7 @@ namespace Aufgabe3_4 {
         query.append("command", "insert");
         let url: string = urlServer + "?" + query.toString();
         let response: Response = await fetch(url);
-        let textAnswer: string await response.text();
+        let textAnswer: string = await response.text();
         console.log(textAnswer);
         form.reset();
      }
