@@ -19,7 +19,9 @@
   "homepage": "https://github.com/kiaralauriano/GIS-SoSe-2021#readme",
   "dependencies": {
     "-": "0.0.1",
+    "@types/mongodb": "^3.6.18",
     "@types/node": "^15.12.1",
+    "mongodb": "^3.6.9",
     "save-dev": "0.0.1-security"
   }
 }

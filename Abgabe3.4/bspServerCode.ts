@@ -2,15 +2,22 @@ import * as Http from "http";
 import * as Url from "url";
 
 export namespace Aufgabe_3_4Server {
+
+    let collectionUser: Mongo.Collection;
+
     console.log("Starting server"); //Konsolenausgabe: "Startin server" 
     let port: number = Number(process.env.PORT); // Nimmt sich den aktuellen Port
     if (!port) 
         port = 8100; // wenn es kein Port gibt, dann wird der Port mit dem wert 8100 initialisiert
 
-    let server: Http.Server = Http.createServer(); //Erstellt neuen Server
-    server.addListener("request", handleRequest); //Dem Server wird ein Listener angehängt, der so die Funktion handleRequest aufruft
-    server.addListener("listening", handleListen); //Dem Server wird ein Listener angehängt, der so die Funktion handleListen aufruft
-    server.listen(port); //Server hört auf den definierten Port
+    let databaseURL: string = 
+
+    function startServer(_port: number | string): void{
+        let server: Http.Server = Http.createServer(); //Erstellt neuen Server
+        server.addListener("request", handleRequest); //Dem Server wird ein Listener angehängt, der so die Funktion handleRequest aufruft
+        server.addListener("listening", handleListen); //Dem Server wird ein Listener angehängt, der so die Funktion handleListen aufruft
+        server.listen(port); //Server hört auf den definierten Port
+    }
 
     function handleListen(): void { 
         console.log("Listening"); // Konsolenausgabe: "Listening" 

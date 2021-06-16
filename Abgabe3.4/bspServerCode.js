@@ -5,14 +5,17 @@ const Http = require("http");
 const Url = require("url");
 var Aufgabe_3_4Server;
 (function (Aufgabe_3_4Server) {
+    let collectionUser;
     console.log("Starting server"); //Konsolenausgabe: "Startin server" 
     let port = Number(process.env.PORT); // Nimmt sich den aktuellen Port
     if (!port)
         port = 8100; // wenn es kein Port gibt, dann wird der Port mit dem wert 8100 initialisiert
-    let server = Http.createServer(); //Erstellt neuen Server
-    server.addListener("request", handleRequest); //Dem Server wird ein Listener angehängt, der so die Funktion handleRequest aufruft
-    server.addListener("listening", handleListen); //Dem Server wird ein Listener angehängt, der so die Funktion handleListen aufruft
-    server.listen(port); //Server hört auf den definierten Port
+    let databaseURL = function startServer(_port) {
+        let server = Http.createServer(); //Erstellt neuen Server
+        server.addListener("request", handleRequest); //Dem Server wird ein Listener angehängt, der so die Funktion handleRequest aufruft
+        server.addListener("listening", handleListen); //Dem Server wird ein Listener angehängt, der so die Funktion handleListen aufruft
+        server.listen(port); //Server hört auf den definierten Port
+    };
     function handleListen() {
         console.log("Listening"); // Konsolenausgabe: "Listening" 
     }
