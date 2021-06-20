@@ -3,9 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Aufgabe_3_4Server = void 0;
 const Http = require("http");
 const Url = require("url");
+const Mongo = require("mongodb");
 var Aufgabe_3_4Server;
 (function (Aufgabe_3_4Server) {
-    let collectionUser;
+    let collectionUsers;
     console.log("Starting server"); //Konsolenausgabe: "Startin server" 
     let port = Number(process.env.PORT); // Nimmt sich den aktuellen Port
     if (!port)
@@ -18,13 +19,14 @@ var Aufgabe_3_4Server;
         let server = Http.createServer(); //Erstellt neuen Server
         server.addListener("request", handleRequest); //Dem Server wird ein Listener angehängt, der so die Funktion handleRequest aufruft
         server.addListener("listening", handleListen); //Dem Server wird ein Listener angehängt, der so die Funktion handleListen aufruft
-        server.listen(port); //Server hört auf den definierten Port
+        server.listen(_port); //Server hört auf den definierten Port
     }
-    async function connectToDatabase(_port) {
-        let server = Http.createServer();
-        server.addListener("request", handleRequest);
-        server.addListener("listening", handleListen);
-        server.listen(_port);
+    async function connectToDatabase(_url) {
+        let options = { useNewUrlParser: true, useUnifiedTopology: true };
+        let mongoClient = new Mongo.MongoClient(_url, options);
+        await mongoClient.connect();
+        collectionUsers = mongoClient.db("Registration").collection("Users");
+        console.log("Database connection", collectionUsers != undefined);
     }
     function handleListen() {
         console.log("Listening"); // Konsolenausgabe: "Listening" 
@@ -38,7 +40,7 @@ var Aufgabe_3_4Server;
             let query = url.query;
             let command = query.command;
             if (command == "insert") {
-                let fname = query.fname; //mit <string> sind wir sicher, dass es ein String ist und kein String array
+                let fname = query.fname;
                 let nname = query.nname;
                 let email = query.email;
                 let password = query.password;
@@ -64,11 +66,11 @@ var Aufgabe_3_4Server;
         _response.end();
     }
     async function storeData(_dbUser) {
-        await collectionUser.insertOne(_dbUser);
+        await collectionUsers.insertOne(_dbUser);
     }
     async function getAllDBUsers() {
         let dbUser;
-        dbUser = await collectionUser.find().toArray();
+        dbUser = await collectionUsers.find().toArray();
         return dbUser;
     }
 })(Aufgabe_3_4Server = exports.Aufgabe_3_4Server || (exports.Aufgabe_3_4Server = {}));

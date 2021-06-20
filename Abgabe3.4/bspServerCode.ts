@@ -4,7 +4,7 @@ import * as Mongo from "mongodb";
 
 export namespace Aufgabe_3_4Server {
 
-    let collectionUser: Mongo.Collection;
+    let collectionUsers: Mongo.Collection;
 
     console.log("Starting server"); //Konsolenausgabe: "Startin server" 
     let port: number = Number(process.env.PORT); // Nimmt sich den aktuellen Port
@@ -13,6 +13,7 @@ export namespace Aufgabe_3_4Server {
 
     let databaseURL: string = "mongodb://localhost:27017";
     //mongodb+srv://kiki:<password>@wievieleprogrammenoch.q8j9w.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+    
     startServer(port);
     connectToDatabase(databaseURL);
 
@@ -20,14 +21,15 @@ export namespace Aufgabe_3_4Server {
         let server: Http.Server = Http.createServer(); //Erstellt neuen Server
         server.addListener("request", handleRequest); //Dem Server wird ein Listener angehängt, der so die Funktion handleRequest aufruft
         server.addListener("listening", handleListen); //Dem Server wird ein Listener angehängt, der so die Funktion handleListen aufruft
-        server.listen(port); //Server hört auf den definierten Port
+        server.listen(_port); //Server hört auf den definierten Port
     }
 
-    async function connectToDatabase(_port: number | string): Promise<void> {
-        let server: Http.Server = Http.createServer();
-        server.addListener("request", handleRequest);
-        server.addListener("listening", handleListen);
-        server.listen(_port);
+    async function connectToDatabase(_url: string): Promise<void> {
+        let options: Mongo.MongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
+        let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
+        await mongoClient.connect();
+        collectionUsers = mongoClient.db("Registration").collection("Users");
+        console.log("Database connection", collectionUsers != undefined);
     }
 
     function handleListen(): void { 
@@ -54,8 +56,8 @@ export namespace Aufgabe_3_4Server {
             let query: Query = url.query;
             let command: string = <string>query.command;
             if (command == "insert") {
-                let fname: string = <string>query.fname;    //mit <string> sind wir sicher, dass es ein String ist und kein String array
-                let nname: string = <string>query.nname;
+                let fname: string = <string>query.fname; 
+                let nname: string = <string>query.nname;   
                 let email: string = <string>query.email;
                 let password: string = <string>query.password;
                 if (fname && nname && email && password) {
@@ -79,12 +81,12 @@ export namespace Aufgabe_3_4Server {
     }
 
     async function storeData(_dbUser: DBUser): Promise <void> {
-        await collectionUser.insertOne(_dbUser);
+        await collectionUsers.insertOne(_dbUser);
     }
 
     async function getAllDBUsers(): Promise<DBUser[]> {
         let dbUser: DBUser[];
-        dbUser = await collectionUser.find().toArray();
+        dbUser = await collectionUsers.find().toArray();
         return dbUser;
     }
         
