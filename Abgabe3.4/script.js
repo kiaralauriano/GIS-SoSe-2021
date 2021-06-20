@@ -7,8 +7,8 @@ var Aufgabe3_4;
     let btBack = document.getElementById("giveback");
     btBack.addEventListener("click", getData);
     let form = document.getElementById("form");
-    let urlServer = "http://localhost:8100";
-    //let urlServer: string = "https://kiaralauriano.herokuapp.com";
+    //let urlServer: string = "http://localhost:8100";
+    let urlServer = "https://kiaralauriano.herokuapp.com";
     async function sendData() {
         let formData = new FormData(form);
         let query = new URLSearchParams(formData);

@@ -12,7 +12,7 @@ export namespace Aufgabe_3_4Server {
         port = 8100; // wenn es kein Port gibt, dann wird der Port mit dem wert 8100 initialisiert
 
     let databaseURL: string = "mongodb://localhost:27017";
-
+    //mongodb+srv://kiki:<password>@wievieleprogrammenoch.q8j9w.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
     startServer(port);
     connectToDatabase(databaseURL);
 

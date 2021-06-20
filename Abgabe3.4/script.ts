@@ -7,8 +7,8 @@ namespace Aufgabe3_4 {
     btBack.addEventListener("click", getData);
     let form: HTMLFormElement = <HTMLFormElement> document.getElementById("form");
     
-    let urlServer: string = "http://localhost:8100";
-    //let urlServer: string = "https://kiaralauriano.herokuapp.com";
+    //let urlServer: string = "http://localhost:8100";
+    let urlServer: string = "https://kiaralauriano.herokuapp.com";
 
     async function sendData(): Promise<void> {
         let formData: FormData = new FormData(form);
